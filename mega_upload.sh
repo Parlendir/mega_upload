@@ -15,10 +15,10 @@
 SOURCE=/home/desk/syno_media/tampon/MEGA_upload
 
 ## Limit for a new upload : min space available on the account (mb)
-LIMIT=100
+LIMIT=2500
 
 ## MEGA account credentials
-EMAIL="email@example.com"
+EMAIL="example@example.com"
 PASSWORD="suchastrongpassword"
 
 ## Log file path
@@ -44,11 +44,10 @@ size_free="$(megadf -u ${EMAIL} -p ${PASSWORD} --free --mb)"
                 megaput --no-progress --disable-previews -u ${EMAIL} -p ${PASSWORD} "$FILE"
 
                 # verbosity
-                echo ${FILE:41:80}
-                echo "$(date) : Uploaded" >> ${LOG}
+                echo "$(date) : Uploaded : ${FILE:41:50}" >> ${LOG}
 
                 # delete the uploaded FILE for SOURCE
-                rm "$FILE" && echo "$(date) : Deleted" >> ${LOG}
+                rm "$FILE" && echo "$(date) : Deleted from source" >> ${LOG}
 
         else
 
