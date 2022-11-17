@@ -24,26 +24,11 @@ PASSWORD="suchastrongpassword"
 ## Log file path
 LOG=/home/desk/syno_musique/Scripts/mega_upload/MEGA_log.md
 
-
-## FUNCTIONS
-
-## Write to the LOG
-# LOGGER(){
-#       echo $1 >> ${LOG}
-# }
-
-
 ## START OF THE SCRIPT
 
 ## Start the log trace
 echo "## UPLOAD du $(date)" >> ${LOG}
 echo "" >> ${LOG}
-
-## start the log trace
-# LOGGER "==================================================="
-# LOGGER ""
-# LOGGER "Upload start : $(date)"
-
 
 
 ## Loop to iterate on each FILE included in the SOURCE folder
