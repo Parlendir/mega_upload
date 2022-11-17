@@ -27,7 +27,7 @@ LOG=/home/desk/syno_musique/Scripts/mega_upload/MEGA_log.md
 ## START OF THE SCRIPT
 
 ## Start the log trace
-echo "## UPLOAD du $(date)" >> ${LOG}
+echo "## UPLOAD : $(date)" >> ${LOG}
 echo "" >> ${LOG}
 
 
@@ -44,10 +44,11 @@ size_free="$(megadf -u ${EMAIL} -p ${PASSWORD} --free --mb)"
                 megaput --no-progress --disable-previews -u ${EMAIL} -p ${PASSWORD} "$FILE"
 
                 # verbosity
-                echo "Uploaded : ${FILE:41:40}" >> ${LOG}
+                echo ${FILE:41:80}
+                echo "$(date) : Uploaded" >> ${LOG}
 
                 # delete the uploaded FILE for SOURCE
-                rm "$FILE" && echo "Deleted  : ${FILE:41:40}" >> ${LOG}
+                rm "$FILE" && echo "$(date) : Deleted" >> ${LOG}
 
         else
 
