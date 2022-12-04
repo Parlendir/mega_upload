@@ -34,8 +34,8 @@ echo "" >> ${LOG}
 ## Loop to iterate on each FILE included in the SOURCE folder
 for FILE in $SOURCE/* ; do
 
-##  Get the free space available in the account (Mb)
-size_free="$(megadf -u ${EMAIL} -p ${PASSWORD} --free --mb)"
+        ##  Get the free space available in the account (Mb)
+        size_free="$(megadf -u ${EMAIL} -p ${PASSWORD} --free --mb)"
 
         ## test the available free space in the account
         if [[ ${size_free} > ${LIMIT} ]]; then
